@@ -1,6 +1,7 @@
 package ifpb.pp.testes;
 
 import ifpb.pp.teste.Calculadora;
+import ifpb.pp.teste.CalculadoraSubtrair;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -10,7 +11,7 @@ import org.junit.Test;
  */
 public class CalculadoraSubtracaoTest {
 
-    private Calculadora calc = new Calculadora();
+    private CalculadoraSubtrair calc = new CalculadoraSubtrair();
     
     @Test
     public void testarSubtracaoNumPositivos (){
