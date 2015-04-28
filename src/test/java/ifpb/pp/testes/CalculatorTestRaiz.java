@@ -1,5 +1,6 @@
 package ifpb.pp.testes;
 
+import ifpb.pp.teste.Calculadora;
 import ifpb.pp.teste.CalculadoraException;
 import ifpb.pp.teste.CalculadoraRaizQuadrada;
 import static org.junit.Assert.*;
@@ -11,7 +12,7 @@ import org.junit.Test;
  */
 public class CalculatorTestRaiz {
     
-    CalculadoraRaizQuadrada calc = new CalculadoraRaizQuadrada();
+    Calculadora calc = new Calculadora();
     
     @Test
     public void testaRaizQuadrada() {
