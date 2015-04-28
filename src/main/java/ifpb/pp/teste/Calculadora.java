@@ -12,6 +12,7 @@ public class Calculadora {
         return a+b;
     }
     
+
     public double dividir(Integer a, Integer b){
         if(a==null || b==null){
             throw new CalculadoraException("Não é possivel dividir com valores nulos");
@@ -21,5 +22,12 @@ public class Calculadora {
         }
         
         return a/b;
+    }
+
+    public int multiplicar(Integer a,Integer b){
+        
+        if(a==null || b==null)
+            throw new CalculadoraException("Nao e possivel multiplicar com valores nulos");
+        return a*b;
     }
 }
