@@ -25,25 +25,25 @@ public class CalculadoraMultiplicacaoTest {
 
     @Test
     public void testaMultiplicacaoPorZero() {
-        assertEquals("deu certo", 0, calculadora.multiplicar(0, 3));
-        assertEquals("deu certo", 0, calculadora.multiplicar(4, 0));
-        assertTrue("deu certo", 2 == calculadora.multiplicar(0, 2));
-        assertFalse("deu certo", 3 == calculadora.multiplicar(0, 0));
+        assertEquals("multiplicacao por zero", 0, calculadora.multiplicar(0, 3));
+        assertEquals("multiplicacao por zero", 0, calculadora.multiplicar(4, 0));
+        assertTrue("multiplicacao por zero", 0 == calculadora.multiplicar(0, 2));
+        assertFalse("multiplicacao por zero", 3 == calculadora.multiplicar(0, 0));
     }
 
     @Test
     public void testaMultiplicacaoValoresNegativos() {
-        assertEquals("deu certo", -3, calculadora.multiplicar(-1, 3));
-        assertEquals("deu certo", 4, calculadora.multiplicar(-2, -2));
-        assertTrue("deu certo", -12 == calculadora.multiplicar(4, -3));
-        assertFalse("deu certo", 5 == calculadora.multiplicar(-5, 1));
+        assertEquals("multiplicacao por valores negativos", -3, calculadora.multiplicar(-1, 3));
+        assertEquals("multiplicacao por valores negativos", 4, calculadora.multiplicar(-2, -2));
+        assertTrue("multiplicacao por valores negativos", -12 == calculadora.multiplicar(4, -3));
+        assertFalse("multiplicacao por valores negativos", 5 == calculadora.multiplicar(-5, 1));
     }
 
     @Test(expected = CalculadoraException.class)
     public void testaMultiplicacaoValoresNulos() {
-        assertEquals("deu certo", 4, calculadora.multiplicar(null, 3));
-        assertEquals("deu certo", 0, calculadora.multiplicar(4, null));
-        assertFalse("deu certo", 3 == calculadora.multiplicar(null, null));
+        assertEquals("Multiplicacao por valores nulos", 4, calculadora.multiplicar(null, 3));
+        assertEquals("Multiplicacao por valores ", 0, calculadora.multiplicar(4, null));
+        assertFalse("Multiplicacao por valores ", 3 == calculadora.multiplicar(null, null));
     }
 
 }

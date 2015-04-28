@@ -5,8 +5,10 @@
  */
 package ifpb.pp.testes;
 
+
 import ifpb.pp.teste.Calculadora;
 import ifpb.pp.teste.CalculadoraException;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 /**
