@@ -12,5 +12,11 @@ public class Calculadora {
         return a+b;
     }
     
+    public int multiplicar(Integer a,Integer b){
+        
+        if(a==null || b==null)
+            throw new CalculadoraException("Nao e possivel multiplicar com valores nulos");
+        return a*b;
+    }
     
 }
