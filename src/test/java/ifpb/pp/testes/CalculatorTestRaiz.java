@@ -15,14 +15,14 @@ public class CalculatorTestRaiz {
     
     @Test
     public void testaRaizQuadrada() {
-        assertEquals("Resultado válido", 2, calc.raizQuadrada(4));
+        assertTrue("Resultado válido", 2==calc.raizQuadrada(4));
         assertTrue("Resultado válido", 3==calc.raizQuadrada(9));
-        assertEquals("Resutado válido", 0, calc.raizQuadrada(0));
+        assertTrue("Resutado válido", 0==calc.raizQuadrada(0));
     }
 
     @Test(expected = CalculadoraException.class)
     public void testaRaizQuadradaNegativos() {
-        assertEquals("Impossivel calcular raiz de numeros negativos", 2, calc.raizQuadrada(-1));
+        assertEquals("Impossivel calcular raiz de numeros negativos", 2, calc.raizQuadrada(-1));        
     }
     
     @Test(expected = CalculadoraException.class)
