@@ -10,9 +10,6 @@ public class CalculadoraRaizQuadrada {
         if (value < 0) {
             throw new CalculadoraException("Não é possivel efetuar raiz quadrada de número negativo");
         }
-        if (value == -0) {
-            throw new CalculadoraException("Não existe raiz quadrada de zero negativo");
-        }
         return Math.sqrt(value);
     }
 }
