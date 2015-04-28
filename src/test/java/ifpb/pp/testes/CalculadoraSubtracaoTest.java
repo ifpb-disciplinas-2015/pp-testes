@@ -1,6 +1,8 @@
 package ifpb.pp.testes;
 
 import ifpb.pp.teste.Calculadora;
+import ifpb.pp.teste.CalculadoraException;
+import ifpb.pp.teste.CalculadoraSubtrair;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -10,7 +12,7 @@ import org.junit.Test;
  */
 public class CalculadoraSubtracaoTest {
 
-    private Calculadora calc = new Calculadora();
+    private CalculadoraSubtrair calc = new CalculadoraSubtrair();
     
     @Test
     public void testarSubtracaoNumPositivos (){
@@ -25,10 +27,10 @@ public class CalculadoraSubtracaoTest {
         assertEquals("-2 - 3", -5 ,calc.subtrair(-2, 3));
     }
     
-    @Test
+    @Test(expected = CalculadoraException.class)
     public void testarSubtracaoValoresNulos(){
-        assertEquals("10 - null", 10,calc.subtrair(10, null));
-        assertEquals("null - null", 0, calc.subtrair(null, null));
+        assertEquals("10 - null",calc.subtrair(10, null));
+        assertEquals("null - null", calc.subtrair(null, null));
     }
     
 }
