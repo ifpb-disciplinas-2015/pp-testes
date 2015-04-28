@@ -45,8 +45,6 @@ public class CalculadoraTest {
         assertEquals("deu certo", 1,calculadora.somar(3,-2));
       
         assertTrue("deu certo", 1==calculadora.somar(null,null));
-        
-        
     }
     
   
