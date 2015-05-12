@@ -7,36 +7,49 @@ package ifpb.pp.testes;
 
 import ifpb.pp.teste.Calculadora;
 import ifpb.pp.teste.CalculadoraException;
+import java.util.Arrays;
+import java.util.Collection;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 /**
  *
  * @author Marcelo Augusto
  */
+
+@RunWith(Parameterized.class)
 public class CalculadoraMultiplicacaoTest {
 
+    @Parameterized.Parameters
+    public static Collection<Integer[]> addNumeros(){
+        return Arrays.asList(new Integer[][] {{1,2}, {2,3}});
+    }   
     private Calculadora calculadora = new Calculadora();
-
-    public CalculadoraMultiplicacaoTest() {
+    private int a,b;
+    
+    public CalculadoraMultiplicacaoTest(int a,int b) {
+      this.a=a;
+      this.b=b;
     }
 
     @Test
     public void testaMultiplicacaoPorZero() {
-        assertEquals("multiplicacao por zero", 0, calculadora.multiplicar(0, 3));
-        assertEquals("multiplicacao por zero", 0, calculadora.multiplicar(4, 0));
-        assertTrue("multiplicacao por zero", 0 == calculadora.multiplicar(0, 2));
-        assertFalse("multiplicacao por zero", 3 == calculadora.multiplicar(0, 0));
+//        assertEquals("multiplicacao por zero", 0, calculadora.multiplicar(a, b));
+//        assertEquals("multiplicacao por zero", 0, calculadora.multiplicar(a, b));
+//        assertTrue("multiplicacao por zero", 0 == calculadora.multiplicar(a, b));
+        assertFalse("multiplicacao por zero", 3 == calculadora.multiplicar(a, b));
     }
 
     @Test
     public void testaMultiplicacaoValoresNegativos() {
-        assertEquals("multiplicacao por valores negativos", -3, calculadora.multiplicar(-1, 3));
-        assertEquals("multiplicacao por valores negativos", 4, calculadora.multiplicar(-2, -2));
-        assertTrue("multiplicacao por valores negativos", -12 == calculadora.multiplicar(4, -3));
-        assertFalse("multiplicacao por valores negativos", 5 == calculadora.multiplicar(-5, 1));
+//        assertEquals("multiplicacao por valores negativos", -3, calculadora.multiplicar(a, b));
+//        assertEquals("multiplicacao por valores negativos", 4, calculadora.multiplicar(a, b));
+//        assertTrue("multiplicacao por valores negativos", -12 == calculadora.multiplicar(a, b));
+        assertFalse("multiplicacao por valores negativos", 5 == calculadora.multiplicar(a, b));
     }
 
     @Test(expected = CalculadoraException.class)
