@@ -41,7 +41,8 @@ public class CalculadoraMultiplicacaoTest {
 //        assertEquals("multiplicacao por zero", 0, calculadora.multiplicar(a, b));
 //        assertEquals("multiplicacao por zero", 0, calculadora.multiplicar(a, b));
 //        assertTrue("multiplicacao por zero", 0 == calculadora.multiplicar(a, b));
-        assertFalse("multiplicacao por zero", 3 == calculadora.multiplicar(a, b));
+        assertFalse("multiplicacao por zero", 
+                3 == calculadora.multiplicar(a, b));
     }
 
     @Test
@@ -54,9 +55,12 @@ public class CalculadoraMultiplicacaoTest {
 
     @Test(expected = CalculadoraException.class)
     public void testaMultiplicacaoValoresNulos() {
-        assertEquals("Multiplicacao por valores nulos", 4, calculadora.multiplicar(null, 3));
-        assertEquals("Multiplicacao por valores ", 0, calculadora.multiplicar(4, null));
-        assertFalse("Multiplicacao por valores ", 3 == calculadora.multiplicar(null, null));
+        assertEquals("Multiplicacao por valores nulos", 4, 
+                calculadora.multiplicar(null, 3));
+        assertEquals("Multiplicacao por valores ", 0, 
+                calculadora.multiplicar(4, null));
+        assertFalse("Multiplicacao por valores ", 
+                3 == calculadora.multiplicar(null, null));
     }
 
 }
