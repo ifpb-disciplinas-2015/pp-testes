@@ -90,6 +90,18 @@ public class Pessoa implements Serializable {
         return true;
     }
     
-    
+    public long calcularJuros(String data){
+        //calcular os dias
+        // calcular o valor dos juros
+        
+        return calcularJurosDepoisDias(calcularDias(data));
+        
+    }
+    private int calcularDias(String data){
+        return 0;
+    }
+    private long calcularJurosDepoisDias(int dias){
+        return 0;
+    }
     
 }
