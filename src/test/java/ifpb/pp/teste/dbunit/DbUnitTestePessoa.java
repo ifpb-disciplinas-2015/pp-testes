@@ -27,6 +27,7 @@ public class DbUnitTestePessoa {
     
     private static DbUnitHelp dbUnitHelp;
     private DAO<Pessoa> daoJpa;
+    
     public DbUnitTestePessoa() {
         dbUnitHelp.execute(DatabaseOperation.INSERT);
         daoJpa=new DAOJPA("pp-testes");
