@@ -18,9 +18,7 @@ public final class ConnectionHelper {
             return DriverManager.getConnection(banco.getString("url"),
                     banco.getString("usuario"),
                     banco.getString("senha"));
-        } catch (ClassNotFoundException e) {
-            throw new InfrastructureException(e.getMessage(), e);
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException | SQLException e) {
             throw new InfrastructureException(e.getMessage(), e);
         }
     }
