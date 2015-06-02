@@ -43,4 +43,41 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
+    <profiles>
+        <profile>
+            <id>des</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <pular.teste>false</pular.teste>
+            </properties>
+        </profile>
+        <profile>
+            <id>integracao</id>
+            <properties>
+                <pular.teste>true</pular.teste>
+            </properties>
+        </profile>
+    </profiles>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.10</version>
+                <executions>
+                    <execution>
+                        <id>default-test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <skipTests>${pular.teste}</skipTests>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
