@@ -45,12 +45,21 @@
     </properties>
     <profiles>
         <profile>
-            <id>des</id>
+            <id>jenkins</id>
             <activation>
+                <property>
+                    <name>${env.BUILD_NUMBER}</name>
+                </property> 
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
                 <pular.teste>false</pular.teste>
+            </properties>
+        </profile>
+        <profile>
+            <id>des</id>
+            <properties>
+                <pular.teste>true</pular.teste>
             </properties>
         </profile>
         <profile>

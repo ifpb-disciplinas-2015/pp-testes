@@ -18,7 +18,7 @@ public class CalculadoraSubtracaoTest {
     
     @Parameterized.Parameters
     public static Collection<Integer[]> addNumeros(){
-        return Arrays.asList(new Integer[][] {{1,2}, {2,-1}});
+        return Arrays.asList(new Integer[][] {{1,2}, {0,1}});
     } 
     private Calculadora calc = new Calculadora();
     private int a,b;
