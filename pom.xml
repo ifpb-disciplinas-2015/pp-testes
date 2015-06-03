@@ -65,7 +65,7 @@
         <profile>
             <id>integracao</id>
             <properties>
-                <pular.teste>true</pular.teste>
+                <pular.teste>false</pular.teste>
             </properties>
         </profile>
     </profiles>
