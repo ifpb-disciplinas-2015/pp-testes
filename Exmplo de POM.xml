@@ -52,8 +52,28 @@
             </resource>
         </resources>
         <plugins>
-            <!-- Adicionando diretorios ao build -->
-            <plugin>
+			<!-- plugin para realização dos testes de cobertura -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<formats>
+					<format>xml</format>
+					<format>html</format>
+					</formats>
+				</configuration>
+				<executions>
+					<execution>
+					<phase>package</phase>
+					<goals>
+						<goal>cobertura</goal>
+					</goals>
+					</execution>
+				</executions>
+			</plugin>
+				<!-- Adicionando diretorios ao build -->
+			<plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
                 <version>1.9.1</version>
