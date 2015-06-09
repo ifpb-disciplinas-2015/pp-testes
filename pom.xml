@@ -51,7 +51,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>cobertura-maven-plugin</artifactId>
-                        <version>${cobertura.version}</version>
+                        <version>3.3</version>
                         <configuration>
                             <formats>
                                 <format>xml</format>
