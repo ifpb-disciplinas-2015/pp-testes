@@ -38,6 +38,51 @@
                 <skip.unit.tests>true</skip.unit.tests>
             </properties>
         </profile>
+        
+        <profile>
+            <id>jenkins</id>
+            <activation>
+                <property>
+                    <name>${env.BUILD_NUMBER}</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>cobertura-maven-plugin</artifactId>
+                        <version>${cobertura.version}</version>
+                        <configuration>
+                            <formats>
+                                <format>xml</format>
+                                <format>html</format>
+                            </formats>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>cobertura</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-pmd-plugin</artifactId>
+                        <version>3.4</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>check</goal>
+                                    <goal>cpd-check</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>                        
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 
     <build>
@@ -101,7 +146,7 @@
                     <!-- Excluindo os testes de integração-->
                     <excludes>
                         <exclude>**/db/entidades/*Test.java</exclude>
-                          </excludes>
+                    </excludes>
                 </configuration>
             </plugin>
             
